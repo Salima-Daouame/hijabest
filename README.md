@@ -1,1 +1,1 @@
-### ReactJS + TialwindCss
+### ReactJS + TailwindCss
