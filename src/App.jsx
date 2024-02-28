@@ -1,16 +1,16 @@
 import './App.css';
-import Navbar from './component/Navbar';
+import NavbarDesk from './component/NavbarDesk';
 import About from './component/About';
 import Home from './component/Home';
 
 function App() {
 
   return (
-    <>
-      <Navbar />
+    <div className='dark:text-white dark:bg-slate-900 duration-100'>
+      <NavbarDesk />
       <Home />
       <About />
-    </>
+    </div>
   )
 }
 

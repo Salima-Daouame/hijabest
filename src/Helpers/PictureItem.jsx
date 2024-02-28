@@ -10,34 +10,40 @@ function PictureItem({ image, title }) { // props
         setIsHover(e.type === 'mouseenter');
     };
     const handleDownload = () => {
-            fetch(image)
-              .then(response => response.blob())
-              .then(blob => {
+        fetch(image)
+            .then(response => response.blob())
+            .then(blob => {
                 saveAs(blob, title);
-              })
-              .catch(error => {
+            })
+            .catch(error => {
                 console.error('Error downloading image:', error);
-              });
-    
+            });
+
     };
 
     return (
 
-        <div className=" mb-6 relative cursor-pointer " onClick={handleDownload}>
+        <div className=" mb-6 relative hover:opacity-75  cursor-pointer " onClick={handleDownload}
+            onMouseEnter={handleHover}
+            onMouseLeave={handleHover}>
             <img
                 src={image}
                 alt={title}
-                onMouseEnter={handleHover}
-                onMouseLeave={handleHover}
-                className="rounded-3xl hover:opacity-75"
+                className="rounded-3xl"
             />
             {isHover && (
                 <div className="absolute top-1/2 left-1/2 
         transform -translate-x-1/2 -translate-y-1/2 ">
                     <ion-icon
                         name="download-outline"
-                        style={{ fontSize: '2.5rem', color: '#fff'}}
-                       
+                        style={{
+                            fontSize: '1.8rem',
+                            color: '#000',
+                            padding: '0.5rem',
+                            backgroundColor: '#fff',
+                            borderRadius: '50%',
+                            border: '2px solid #fff',
+                        }}
                     />
                 </div>
             )}
@@ -52,3 +58,7 @@ PictureItem.propTypes = {
 };
 
 export default PictureItem;
+
+
+
+
