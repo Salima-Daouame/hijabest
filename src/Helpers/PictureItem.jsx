@@ -2,7 +2,7 @@ import { useState } from 'react';
 import PropTypes from 'prop-types';
 import { saveAs } from 'file-saver';
 
-function PictureItem({ image, title }) { // props
+function PictureItem({ image, title }) { // props : parent to child
 
     const [isHover, setIsHover] = useState(false)  //useState hook
 
@@ -18,11 +18,8 @@ function PictureItem({ image, title }) { // props
             .catch(error => {
                 console.error('Error downloading image:', error);
             });
-
     };
-
     return (
-
         <div className=" mb-6 relative hover:opacity-75  cursor-pointer " onClick={handleDownload}
             onMouseEnter={handleHover}
             onMouseLeave={handleHover}>

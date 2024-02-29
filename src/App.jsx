@@ -6,7 +6,7 @@ import Home from './component/Home';
 function App() {
 
   return (
-    <div className='dark:text-white dark:bg-slate-900 duration-100'>
+    <div className='dark:text-white dark:bg-slate-950 duration-100'>
       <NavbarDesk />
       <Home />
       <About />
